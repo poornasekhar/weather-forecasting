@@ -20,10 +20,8 @@ export class ForecastComponent implements OnInit {
   }
 
   onSubmit(weatherForm:any){
-    console.log(weatherForm);
     this._weatherService.forecastWeather(weatherForm.cityName).subscribe(
       (data)=>{
-        console.log(data);
         for(let i=0;i<data.list.length;i+=8){
           const temporary=new ForecastWeather(data.list[i].dt_txt,
                                                 data.list[i].weather[0].icon,
@@ -32,7 +30,6 @@ export class ForecastComponent implements OnInit {
                                                 data.list[i].main.temp_min)
           this.forecastWeather.push(temporary);
         }
-        console.log(this.forecastWeather);
       }
     )
   }

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 import { WeatherService} from '../weather.service';
 import {CurrentWeather} from '../current-weather';
 import { FormBuilder, Validators } from '@angular/forms';
@@ -21,16 +20,14 @@ export class CurrentComponent implements OnInit {
   constructor(private _weatherService:WeatherService) { }
 
   ngOnInit() {
-    //this.myWeather=this._weatherService.weatherNow();
   }
 
   onSubmit(weatherForm:any){
-    console.log(weatherForm);
     this._weatherService.localWeather(weatherForm.cityName).subscribe(
       (data)=>{
-        console.log(data);
         this.myWeather=new CurrentWeather(data.name,
                                           data.main.temp,
+                                          data.weather[0].main,
                                           data.weather[0].icon,
                                           data.main.humidity,
                                           data.main.temp_max,

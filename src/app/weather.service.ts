@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class WeatherService {
   current:CurrentWeather=new CurrentWeather('','',
-  '','','','')
+  '','','','','')
   private apiURL='https://api.openweathermap.org/data/2.5/';
   private appKey='c3d93bafc80f940ffa58e019b470d77c';
 

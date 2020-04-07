@@ -12,10 +12,7 @@
 
   
   .result{
+    display: inline-block;
     width: 20%;
-    min-width: 150px;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    cursor: pointer;
+    padding: 35px;
   }
