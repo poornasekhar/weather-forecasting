@@ -1,0 +1,23 @@
+<div class="container current">
+    <div style="padding-bottom: 2%;" *ngIf="showWeather">   
+        <h1>{{myWeather.cityName}}</h1>
+        <h2>{{myWeather.temp}}&deg;</h2>
+        <div class="img">
+            <img src="assets/{{myWeather.icon}}.png" alt="assets/01d.png">
+        </div>
+        <h3>Humidity: {{myWeather.weatherKind}}</h3>
+        <h4>Max: {{myWeather.tempMax}}&deg;</h4>
+        <h4>Min: {{myWeather.tempMin}}&deg;</h4>
+    </div>
+    <form [formGroup]="currentForm" (ngSubmit)="onSubmit(currentForm.value)" >
+        <div>
+            <section>
+                <input class="search" type="text" placeholder="City" formControlName="cityName">
+                <button name="button" type="submit">Go</button>
+            </section>        
+        </div>
+    </form>
+    <!-- <agm-map [latitude]='lat' [longitude]='lon'>
+        <agm-marker [latitude]='lat' [longitude]='lon'></agm-marker>
+    </agm-map> -->
+</div>

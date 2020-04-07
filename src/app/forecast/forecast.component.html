@@ -1,0 +1,22 @@
+<div class="forecast">
+    <form [formGroup]="currentForm" (ngSubmit)="onSubmit(currentForm.value)" >
+        <div>
+            <section>
+                <input class="search" type="text" placeholder="City" formControlName="cityName">
+                <button name="button" type="submit">Go</button>
+            </section>
+        </div>
+    </form>    
+</div>
+<div *ngFor="let day of forecastWeather">
+    <div  class="result">
+        <h2>{{day.date | date:'MMMM d'}}</h2>
+        <div class="icon">
+            <img src="assets/{{day.icon}}.png" alt="assets/01d.png">
+        </div>
+        <div class="temp">
+            <h3>{{day.tempMin}}&deg;</h3>
+            <h3>{{day.tempMax}}&deg;</h3>
+        </div>
+    </div>    
+</div>

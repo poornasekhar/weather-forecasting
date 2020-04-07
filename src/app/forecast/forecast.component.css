@@ -1,0 +1,21 @@
+.forecast {
+    text-align: center;
+    padding-top: 5%;
+  }
+  
+  .search {
+    width: 250px;
+    margin: 4px auto;
+    text-align: center;
+    display: inline-block;
+  }
+
+  
+  .result{
+    width: 20%;
+    min-width: 150px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
